@@ -1,0 +1,104 @@
+---
+layout: default
+title: 首頁
+description: 知命齋 - 探索東方命理、八字、紫微斗數與易經智慧的研習空間。記錄研習手記、知命造命的心法，以及天人節律與人生覺察。
+---
+
+<!-- Hero 區域 -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag fade-in">
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      歡迎來到知命齋
+    </div>
+    <h1 class="hero-title fade-in fade-in-delay-1">
+      觀天地之節律，<br/>
+      識<span class="accent">命運與本心之機微</span>
+    </h1>
+    <p class="hero-subtitle fade-in fade-in-delay-2">
+      這裡是一個記錄命理研習心得與生命感悟的沉澱空間。<br/>
+      以八字、紫微斗數與易經為鏡，探索生命的底層架構與天人相應。<br/>
+      不墜於宿命之執，願能知命順勢、澄心造命。
+    </p>
+    <div class="hero-buttons fade-in fade-in-delay-3">
+      <a href="#articles" class="btn btn-primary">
+        開始閱讀
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">
+        關於齋主
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 文章列表 -->
+<section id="articles" class="section">
+  <div class="container">
+    <div class="section-header scroll-fade">
+      <p class="section-eyebrow">Latest Notes & Insights</p>
+      <h2 class="section-title">最新文章</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="post-list">
+      {% for post in site.posts %}
+      <div class="post-card scroll-fade">
+        <div class="post-card-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M16 2v4"/>
+              <path d="M8 2v4"/>
+              <path d="M3 10h18"/>
+            </svg>
+            {{ post.date | date: '%Y 年 %m 月 %d 日' }}
+          </span>
+          {% if post.read_time %}
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            {{ post.read_time }} 分鐘
+          </span>
+          {% endif %}
+        </div>
+        <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-card-excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 120 }}</p>
+        {% if post.tags %}
+        <div class="post-card-tags">
+          {% for tag in post.tags %}
+          <a href="{{ '/tags/' | relative_url }}#tag-{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="post-card-readmore">
+          閱讀全文
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 引言金句區 -->
+<section class="quote-section">
+  <div class="container">
+    <blockquote class="quote-text scroll-fade">
+      「不知命，無以為君子也。知命者不怨天，知己者不尤人。<br/>
+      命盤是一張人生的航海圖，而非不可逾越的定數劇本。」
+    </blockquote>
+    <p class="quote-author scroll-fade">— 知命齋 · 研習隨筆</p>
+  </div>
+</section>

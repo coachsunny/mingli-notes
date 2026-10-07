@@ -1,0 +1,23 @@
+# Jekyll 生成與快取
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# 草稿（不想公開的草稿不提交）
+_drafts/
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# IDE 與編輯器
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# 社群宣發與本地配圖素材
+social_assets/
+social_posts/

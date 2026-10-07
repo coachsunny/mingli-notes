@@ -1,0 +1,64 @@
+# ============================================
+# 知命齋 · Jekyll 命理研習博客配置文件
+# ============================================
+
+# 站點基本資訊
+title: 知命齋
+tagline: 知命順勢，觀照本心
+description: 一個探索八字、紫微斗數、易經哲學與天人節律的研習空間。記錄命理研習手記、知命造命的心法，以及人生覺察體悟。
+author: Sunny
+email: shunyi.lee@gmail.com
+lang: zh-CN
+timezone: Asia/Taipei
+
+# 站點 URL（GitHub Pages 網址）
+url: "https://coachsunny.github.io"
+baseurl: "/mingli-notes"
+
+# 構建設定
+markdown: kramdown
+highlighter: rouge
+permalink: /post/:title/
+
+# 預設 Front Matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# 網站導航
+nav:
+  - title: 首頁
+    url: /
+  - title: 文章
+    url: /#articles
+  - title: 標籤
+    url: /tags/
+  - title: 關於
+    url: /about/
+
+# 排除檔案
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+
+# 插件（GitHub Pages 原生支援的插件）
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 文章列表顯示設定
+excerpt_separator: <!--more-->
